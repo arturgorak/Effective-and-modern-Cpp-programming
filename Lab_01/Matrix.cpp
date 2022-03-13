@@ -55,7 +55,6 @@ Matrix &Matrix::operator=(const Matrix &m) {
         this->M = m.M;
 
         delete[] this->data;
-        this->data = nullptr;
         this->data = new double[m.M * m.N];
         std::copy(m.data, m.data + this->N * this->M, this->data);
     }
