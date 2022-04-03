@@ -35,23 +35,23 @@ int compare(const char* a, const char* b) {
 
 
 
-//int main(){
-//	int a = 1, b=-6;
-//	float  y= 1.0 + 1e20 - 1e20, x = 1.0;
-//	Rational p{2}, q{1,4}, r{8,4};
-//	cout << "values\n";
-//	cout << compare(a,b) << " " << compare(b,a) << " " << compare(a,a) << endl;
-//	cout << compare(x,y) << " " << compare(y,x) << " " << compare(x,x) << endl;
-//	cout << compare(p,q) << " " << compare(q,p) << " " << compare(p,r) << endl;
-//	cout << "pointers\n";
-//	cout << compare(&a,&b) << " " << compare(&b,&a) << " " << compare(&a,&a) << endl;
-//	cout << compare(&x,&y) << " " << compare(&y,&x) << " " << compare(&x,&x) << endl;
-//	cout << compare(&p,&q) << " " << compare(&q,&p) << " " << compare(&p,&r) << endl;
-//
-//	const char *s  = "Alpha", *t="Alfa", *t2 = "Alfa";
-//	cout << "C-strings\n";
-//	cout << compare(s,t) << " " << compare(t,s) << " " << compare(t,t)
-//	     << " " << compare(t, t2) << " " << compare(t, "Beta") << endl;
-//
-//    return 0;
-//}
+int main(){
+	int a = 1, b=-6;
+	float  y= 1.0 + 1e20 - 1e20, x = 1.0;
+	Rational p{2}, q{1,4}, r{8,4};
+	cout << "values\n";
+	cout << compare(a,b) << " " << compare(b,a) << " " << compare(a,a) << endl;
+	cout << compare(x,y) << " " << compare(y,x) << " " << compare(x,x) << endl;
+	cout << compare(p,q) << " " << compare(q,p) << " " << compare(p,r) << endl;
+	cout << "pointers\n";
+	cout << compare(&a,&b) << " " << compare(&b,&a) << " " << compare(&a,&a) << endl;
+	cout << compare(&x,&y) << " " << compare(&y,&x) << " " << compare(&x,&x) << endl;
+	cout << compare(&p,&q) << " " << compare(&q,&p) << " " << compare(&p,&r) << endl;
+
+	const char *s  = "Alpha", *t="Alfa", *t2 = "Alfa";
+	cout << "C-strings\n";
+	cout << compare(s,t) << " " << compare(t,s) << " " << compare(t,t)
+	     << " " << compare(t, t2) << " " << compare(t, "Beta") << endl;
+
+    return 0;
+}

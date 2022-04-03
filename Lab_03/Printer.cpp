@@ -17,7 +17,7 @@ public:
         out << prefix << t << postfix;
     };
 };
-/*
+
 int main(){
   /// Creates unary functor that takes one argument x (of any type)
   /// and outputs to given stream x surrounded by given prefix na postfix
@@ -35,7 +35,7 @@ int main(){
   filePrinter("My text");
 	return 0;
 }
- */
+
 /** myFile.txt
 - 5
 - My text
