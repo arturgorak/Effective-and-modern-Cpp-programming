@@ -17,14 +17,11 @@ private:
     std::unique_ptr<T[]> data;
 public:
     Vector(int n) : data(std::make_unique<T[]>(n)) {
-        for(int i = 0; i < n; i++){
-            data[i] = 0.0;
-        }
-        cout << "default" << endl;
+
         sizeOfArray = n;
-//        std::fill(data.get(), data.get() + n, 0.0);
+        std::fill(data.get(), data.get() + n, 0.0);
     };
-//
+
     Vector(std::initializer_list<T> list) : data(std::make_unique<T[]>(list.size())){
         sizeOfArray = list.size();
         std::copy(list.begin(), list.end(), data.get());
@@ -42,7 +39,6 @@ public:
     }
 
     Vector& operator=(const Vector& v) {
-        cout << "copy" << endl;
         if (this == &v) {
             return *this;
         }
@@ -114,7 +110,6 @@ public:
     /// exercise 4
     template<typename S, int N>
     explicit operator Vector<S, N>() const {
-        cout << "yo1" << endl;
         Vector<S,N> v{};
         std::copy(data.get(), data.get() + N, v.getData());
         return v;
@@ -125,39 +120,18 @@ public:
 
 template<typename T>
 inline Vector<T, 0> operator+(Vector<T, 0> left,Vector<T, 0> right) {
+
     if ( left.size() != right.size() ) {
         throw VectorException("incompatible sizes in Vector::operator+");
     }
+    Vector<T,0> res(left.size());
     for(int i = 0; i < left.size(); i++){
-        left[i] += right[i];
+        res[i] = left[i] + right[i];
     }
-    return left;
+    return res;
 }
 
-//
-//template<typename T, int N>
-//inline Vector<T, 0> operator+(Vector<T, 0> left, Vector<T, N>& right) {
-//    cout << "dodawanie 2" << endl;
-//    if ( left.size() != right.size() ) {
-//        throw VectorException("incompatible sizes in Vector::operator+");
-//    }
-//    for(int i = 0; i < left.size(); i++){
-//        left[i] += right[i];
-//    }
-//    return left;
-//}
 
-//template<typename T, int N>
-//inline Vector<T, 0> operator+(Vector<T, N> left, Vector<T, 0>& right) {
-//    cout << "dodawanie 2" << endl;
-//    if ( left.size() != right.size() ) {
-//        throw VectorException("incompatible sizes in Vector::operator+");
-//    }
-//    for(int i = 0; i < left.size(); i++){
-//        left[i] += right[i];
-//    }
-//    return left;
-//}
 
 
 

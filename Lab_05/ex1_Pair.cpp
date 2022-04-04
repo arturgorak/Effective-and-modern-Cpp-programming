@@ -1,7 +1,11 @@
 #include <iostream>
 //-------------------------------------------
 /// ADD FORWARD DECLARATIONS HERE
+template<typename T, typename S>
+class Pair;
 
+template<typename T, typename S>
+std::ostream& operator<< (std::ostream&, const Pair<T,S>&);
 
 //-------------------------------------------
 // DO NOT CHANGE CLASS Pair
@@ -32,7 +36,7 @@ public:
 
 template <typename T, typename S>
 std::ostream& operator << (std::ostream& out, const Pair<T, S>& pair){
-    out << "(" << pair.getFirst() << " " << pair.getSecond() << ")";
+    out << "(" << pair.getFirst() << ", " << pair.getSecond() << ")";
     return out;
 }
 

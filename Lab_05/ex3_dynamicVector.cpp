@@ -9,7 +9,7 @@ int main(){
     cout <<fixed << setprecision(2);
     using DWector = Vector<double, 0>;
 
-    DWector m0{4}; // Vector filled with zeroes
+    DWector m0(4); // Vector filled with zeroes
     LOG(m0);
 
     DWector m1{1.,  2.,  3.,  4.};   // Vector of sizeOfArray 4 from initialization_list

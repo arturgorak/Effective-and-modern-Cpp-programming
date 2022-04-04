@@ -12,6 +12,8 @@ template<typename T, int N>
 class Vector{
 private:
     T data[N];
+
+    Vector(int){}
 public:
     Vector(){
         std::fill(data, data + N, 0);
@@ -60,13 +62,18 @@ public:
     }
 
     template<typename S, int M>
-    explicit operator Vector<S, 0>() const {
-        std::cout << "sadasd"<< std::endl;
+    explicit operator Vector<S, M>() const {
         Vector<S, M> v{};
-        auto tmp = v.getData();
-       // std::copy(data, data + N, v.getData());
-        for(int i = 0 ; i< M; i++){
-            tmp[i] = static_cast<S>(data[i]);
+        if(M > N){
+           // std::copy(data, data + N, v.getData());
+            for(int i = 0; i < N; i++){
+                v[i] = static_cast<S>(data[i]);
+            }
+        } else{
+            // std::copy(data, data + M, v.getData());
+            for(int i = 0; i < M; i++){
+                v[i] = static_cast<S>(data[i]);
+            }
         }
         return v;
     }
@@ -88,10 +95,11 @@ std::ostream &operator<<(std::ostream &stream, Vector<T,N> &v) {
 
 template<typename T, int N>
 inline Vector<T, N> operator+(Vector<T, N> left, Vector<T, N> right) {
+    Vector<T,N> res;
     for(int i = 0; i < N; i++){
-        left[i] += right[i];
+        res[i] = left[i] + right[i];
     }
-    return left;
+    return res;
 }
 
 ///exercise 4
@@ -100,21 +108,24 @@ inline Vector<T, N> operator+(Vector<T, N> left, Vector<T, 0>& right) {
     if ( left.size() != right.size() ) {
         throw VectorException("incompatible sizes in Vector::operator+");
     }
+    Vector<T,N> res;
     for(int i = 0; i < left.size(); i++){
-        left[i] += right[i];
+        res[i] = left[i] + right[i];
     }
-    return left;
+    return res;
 }
 
 template<typename T, int N>
 inline Vector<T, N> operator+(Vector<T, 0> left, Vector<T, N>& right) {
-    if ( left.size() != right.size() ) {
-        throw VectorException("incompatible sizes in Vector::operator+");
-    }
-    for(int i = 0; i < left.size(); i++){
-        right[i] += left[i];
-    }
-    return right;
+//    if ( left.size() != right.size() ) {
+//        throw VectorException("incompatible sizes in Vector::operator+");
+//    }
+//    Vector<T,N> res;
+//    for(int i = 0; i < left.size(); i++){
+//        res[i] = right[i] + left[i];
+//    }
+//    return res;
+    return right + left;
 }
 
 
