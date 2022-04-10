@@ -7,3 +7,4 @@ Exercise topics:
 - Lab_03: Functional objects 
 - Lab_04: Function templates 
 - Lab_05: Class templates
+- Lab_06: Variadic templates

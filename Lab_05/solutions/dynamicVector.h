@@ -111,7 +111,16 @@ public:
     template<typename S, int N>
     explicit operator Vector<S, N>() const {
         Vector<S,N> v{};
-        std::copy(data.get(), data.get() + N, v.getData());
+        if(N > sizeOfArray){
+            for(int i = 0; i < sizeOfArray; i++){
+                v[i] = static_cast<S>(data[i]);
+            }
+        } else{
+            for(int i = 0; i < N; i++){
+                v[i] = static_cast<S>(data[i]);
+            }
+        }
+        //std::copy(data.get(), data.get() + N, v.getData());
         return v;
     }
 
