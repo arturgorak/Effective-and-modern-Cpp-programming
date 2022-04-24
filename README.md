@@ -8,3 +8,4 @@ Exercise topics:
 - Lab_04: Function templates 
 - Lab_05: Class templates
 - Lab_06: Variadic templates
+- Lab_07: Iterators
