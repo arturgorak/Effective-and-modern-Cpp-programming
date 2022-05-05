@@ -9,3 +9,4 @@ Exercise topics:
 - Lab_05: Class templates
 - Lab_06: Variadic templates
 - Lab_07: Iterators
+- Lab_08: Traits & Policies
