@@ -1,38 +1,6 @@
 #include <iostream>
+#include "solutions/ex4_solution.h";
 using namespace std;
-
-template <int N>
-class Vector{
-  int data[N];
- public:
-  Vector(){
-	cout << " Default constr" << endl;
-  }
-  Vector(std::initializer_list<int> list){
-	cout << " Init list constr" << endl;
-	auto it = list.begin();
-	for(int i=0; i<N; i++) {
-	  data[i] = *it++;
-	}
-  }
-  Vector(const Vector & m){
-	std::copy(m.data, m.data+N, data);
-	cout << " Copy constr" << endl;
-  }
-  int operator[](int index) const {
-	return data[index];
-  }
-  int & operator[](int index){
-	return data[index];
-  }
-
-  friend ostream & operator << (ostream & out, const Vector & m){
-	for(auto x : m.data){
-	  cout << x << ", ";
-	}
-	return out;
-  }
-};
 
 
 int main(){

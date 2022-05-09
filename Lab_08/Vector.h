@@ -41,7 +41,7 @@ class Vector {
 	return data[index];
   }
 
-  void set(size_type index, const_reference value) {
+  void set(size_type index, ParamType value) { /// ex2 const_reference -> ParamType
 	data[index] = value;
   }
 
