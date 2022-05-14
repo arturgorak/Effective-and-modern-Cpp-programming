@@ -8,10 +8,20 @@ template <typename T>
 void info(T x){
     typedef typename std::numeric_limits<T> nl;
 
-    std::cout << (nl::is_signed ? "signed" : "unsigned") << ", "
-              << (nl::is_integer ? "integer" : "not integer") << ", "
-              << "min : " << nl::min() << " "
-              << "max : " << nl::max() << std::endl;
+    if(nl::is_signed){
+        cout << "signed, ";
+    } else {
+        cout << "unsigned, ";
+    }
+
+    if(nl::is_integer){
+        cout << "integer, ";
+    } else {
+        cout << "not integer, ";
+    }
+    cout << "min : " << nl::min() << " " << "max : " << nl::max() << endl;
+
+
 }
 
 int main() {

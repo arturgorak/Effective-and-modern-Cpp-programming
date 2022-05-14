@@ -10,3 +10,4 @@ Exercise topics:
 - Lab_06: Variadic templates
 - Lab_07: Iterators
 - Lab_08: Traits & Policies
+- Lab_09: STL Algorithms & Containers

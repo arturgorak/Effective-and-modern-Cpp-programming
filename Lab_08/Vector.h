@@ -26,7 +26,11 @@ class Vector {
   typedef typename vector_traits<T>::ScalarType ScalarType;
   typedef typename vector_traits<T>::ResultType ReturnType;
 
-  Vector() = default;
+  //Vector() = default;
+
+  Vector(){
+      P::fill(data, data+N, vector_traits<T>::default_value());
+  } // ex2 change
   Vector(const Vector & v) = default;
   Vector &operator=(const Vector & m) = default;
 

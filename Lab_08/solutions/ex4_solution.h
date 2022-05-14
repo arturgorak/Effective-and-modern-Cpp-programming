@@ -46,12 +46,12 @@ public:
 };
 
 template<class Left, class Right>
-class VectorSum{
+class AddNode{
     const Left& left;
     const Right& right;
 
 public:
-    VectorSum(Left&& left, Right&& right): left(left), right(right) {}
+    AddNode(Left&& left, Right&& right): left(left), right(right) {}
 
     int operator[](int i) const {
         return left[i] + right[i];
@@ -68,12 +68,12 @@ public:
 };
 
 template<class Left, class Right>
-class VectorDiff{
+class SubNode{
     const Left& left;
     const Right& right;
 
 public:
-    VectorDiff(Left&& left, Right&& right): left(left), right(right) {}
+    SubNode(Left&& left, Right&& right): left(left), right(right) {}
 
     int operator[](int i) const {
         return left[i] - right[i];
@@ -90,12 +90,12 @@ public:
 };
 
 template <class Left, class Right>
-class VectorMult{
+class MultNode{
     const Left& left;
     const Right& right;
 
 public:
-    VectorMult(Left&& left, Right&& right) : left(left), right(right){}
+    MultNode(Left&& left, Right&& right) : left(left), right(right){}
 
     int operator[](int i) const {
         return left * right[i];
@@ -113,17 +113,17 @@ public:
 };
 
 template <typename L, typename R>
-VectorSum<L,R> operator+(L&& l, R&& r){
+AddNode<L,R> operator+(L&& l, R&& r){
     return {std::forward<L>(l), std:: forward<R> (r)};
 }
 
 template <typename L, typename R>
-VectorMult<L,R> operator*(L&& l, R&& r){
+MultNode<L,R> operator*(L&& l, R&& r){
     return {std::forward<L>(l), std:: forward<R> (r)};
 }
 
 template <typename L, typename R>
-VectorDiff<L,R> operator-(L&& l, R&& r){
+SubNode<L,R> operator-(L&& l, R&& r){
     return {std::forward<L>(l), std:: forward<R> (r)};
 }
 #endif //LAB8_EX4_SOLUTION_H
