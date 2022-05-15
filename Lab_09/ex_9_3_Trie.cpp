@@ -12,15 +12,17 @@ using namespace std;
  *       My implementation adds less than 25 lines of code. 
  */
 class Trie{
-//    map<string, Trie> data;
-
-    map<string, std::unique_ptr<Trie>> data;
+    map<string, Trie> data;
     //map<string, Trie*> data2; //podpowiedzi
-    bool last = false;
+    
+    bool last;
 
   /// TODO:
 public:
 
+    Trie(){
+        last = false;
+    }
 
     static void printSentence(const std::vector<std::string>  & sentence ){
         for(const auto & w : sentence)
@@ -31,15 +33,19 @@ public:
        printSentence(sentece);
        cout << "\n";
 
-        auto temp = this;
-        for (auto const& word : sentece) {
-            if (temp->data.find(word) == temp->data.end()) {
-                temp->data.emplace(word, std::make_unique<Trie>());
+        /// TODO:
+        auto trie = this;
+        for (auto x : sentece) {
+            auto find = trie->data.find(x);
+            if (find == trie->data.end()) {
+                Trie tmp;
+                trie->data.emplace(x, tmp);
             }
-            temp = temp->data.at(word).get();
+            trie = &(trie->data.at(x));
+
         }
-        temp->last = true;
-       /// TODO:
+        trie->last = true;
+
     }
     void printPossibleEndings(const std::vector<std::string>  & beginningOfSentece ){
         cout << "Endings for \"";
@@ -47,13 +53,25 @@ public:
         cout << "\" are :\n";
         // TODO:
 
-        auto temp = this;
-        for (auto const& word : beginningOfSentece) {
-            temp = temp->data.at(word).get();
+        auto trie = this;
+        for (auto x : beginningOfSentece) {
+            trie = &(trie->data.at(x));
         }
 
-        temp->traverseTrie();
+        trie->recursive_reading(" >");
     }
+
+    void recursive_reading(const string result) {
+        for (auto [k, v] : data){
+            v.recursive_reading(result + " " + k);
+        }
+
+        if(this->last){
+            cout << result << endl;
+        }
+    }
+
+
     void load(const std::string & fileName){
         ifstream file(fileName);
         if(!file){
@@ -71,13 +89,8 @@ public:
             }
         }
     }
-private:
-    void traverseTrie(const std::string& beginning = " >") {
-        for (auto const& pair : data) {
-            pair.second->traverseTrie(beginning + " " + pair.first);
-        }
-        if (last) std::cout << beginning << std::endl;
-    }
+
+
 };
 
 
