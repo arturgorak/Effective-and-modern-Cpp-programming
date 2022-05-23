@@ -11,3 +11,4 @@ Exercise topics:
 - Lab_07: Iterators
 - Lab_08: Traits & Policies
 - Lab_09: STL Algorithms & Containers
+- Lab_10: Literals, chrono & regex
