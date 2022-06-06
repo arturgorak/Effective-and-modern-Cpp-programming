@@ -13,3 +13,4 @@ Exercise topics:
 - Lab_09: STL Algorithms & Containers
 - Lab_10: Literals, chrono & regex
 - Lab_11: SFINAE
+- Lab_12: Threads
