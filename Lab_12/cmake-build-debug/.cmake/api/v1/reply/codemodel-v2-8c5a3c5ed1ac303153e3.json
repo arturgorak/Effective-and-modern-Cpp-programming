@@ -1,0 +1,78 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.22"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "12",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "12::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-12-Debug-047fa58ca37b08cc3b15.json",
+					"name" : "12",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "12_1::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-12_1-Debug-5e307aefbd1ff61adfd2.json",
+					"name" : "12_1",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "12_3::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-12_3-Debug-d6aaacf67766998dd514.json",
+					"name" : "12_3",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/artem/Pulpit/cpp/zadania/12/cmake-build-debug",
+		"source" : "/home/artem/Pulpit/cpp/zadania/12"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 3
+	}
+}

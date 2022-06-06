@@ -1,0 +1,5 @@
+/home/artem/Pulpit/cpp/zadania/12/cmake-build-debug/CMakeFiles/12.dir
+/home/artem/Pulpit/cpp/zadania/12/cmake-build-debug/CMakeFiles/12_1.dir
+/home/artem/Pulpit/cpp/zadania/12/cmake-build-debug/CMakeFiles/12_3.dir
+/home/artem/Pulpit/cpp/zadania/12/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/artem/Pulpit/cpp/zadania/12/cmake-build-debug/CMakeFiles/rebuild_cache.dir
