@@ -57,7 +57,7 @@ int main( int argc, char* argv[] ) {
     const int imageHeight = 1000;               // bitmap height
     const char *fileName = "mandelbrot.bmp";     // file name to output bitmap
 
-    const int thread_count = 500; ///number of threads
+    const int thread_count = 900; ///number of threads
 
     double x1 = -2, x2 = 1,   // Rectangle in the complex plane [x1, x2]x[y1,,y2]
     y1 = -1, y2 = 1;          // that will plotted on bitmap.
@@ -101,6 +101,7 @@ int main( int argc, char* argv[] ) {
     ///--------------
 
     const int iter = imageHeight / thread_count;
+    cout << iter << endl;
 
     std::vector<std::thread> threads;
     threads.reserve(thread_count);
@@ -108,6 +109,7 @@ int main( int argc, char* argv[] ) {
     for (int i = 0; i < imageHeight; i += iter) {
             threads.emplace_back(function, i, i + iter);
     }
+    cout << threads.size() << endl;
     for (auto& t : threads) {
         t.join();
     }

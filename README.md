@@ -14,3 +14,4 @@ Exercise topics:
 - Lab_10: Literals, chrono & regex
 - Lab_11: SFINAE
 - Lab_12: Threads
+- Lab_13: Metaprogramming
